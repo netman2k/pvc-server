@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"github.com/bitly/go-simplejson"
 	"github.com/codegangsta/martini"
-	"github.com/davecheney/profile"
+	"github.com/pkg/profile"
 	"io/ioutil"
 	"log"
 	"net/http"
