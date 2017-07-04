@@ -1,7 +1,7 @@
 package main
 
 import (
-	"code.google.com/p/gcfg"
+	"gopkg.in/gcfg.v1"
 	"database/sql"
 	"flag"
 	"fmt"
@@ -95,12 +95,7 @@ func main() {
 	}
 
 	if config.Server.Profile != 0 {
-		cfg := profile.Config{
-			MemProfile:  true,
-			CPUProfile:  true,
-			ProfilePath: ".",
-		}
-		p := profile.Start(&cfg)
+		p := profile.Start(profile.MemProfile, profile.CPUProfile, profile.ProfilePath("."))
 		defer p.Stop()
 	}
 
